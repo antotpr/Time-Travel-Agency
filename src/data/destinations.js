@@ -1,3 +1,7 @@
+// Les images sont chargées dynamiquement par src/utils/images.js (import.meta.glob).
+// Pas d'import statique ici pour éviter les erreurs de build si les fichiers sont absents.
+// → Placer les images dans : src/assets/{id}/{id}-card.jpeg  etc.
+
 export const destinations = [
   {
     id: "egypt",
@@ -23,6 +27,9 @@ export const destinations = [
     cardGradient: "linear-gradient(135deg, #1a1200 0%, #2a1e00 50%, #08090f 100%)",
     glowColor: "rgba(201, 168, 76, 0.25)",
     emoji: "🏺",
+    // Images — placer dans src/assets/egypt/
+    // egypt-hero.jpeg, egypt-card.jpeg, egypt-detail.jpeg
+    imageAlt: "Pyramides et temples de l'Égypte ancienne",
   },
   {
     id: "rome",
@@ -48,6 +55,9 @@ export const destinations = [
     cardGradient: "linear-gradient(135deg, #1a0500 0%, #2a1500 50%, #08090f 100%)",
     glowColor: "rgba(192, 57, 43, 0.25)",
     emoji: "⚔️",
+    // Images — placer dans src/assets/rome/
+    // rome-hero.jpeg, rome-card.jpeg, rome-detail.jpeg
+    imageAlt: "Colisée et Forum Romain de l'Empire Romain",
   },
   {
     id: "japan",
@@ -73,6 +83,9 @@ export const destinations = [
     cardGradient: "linear-gradient(135deg, #0a0514 0%, #140a1a 50%, #08090f 100%)",
     glowColor: "rgba(212, 160, 176, 0.25)",
     emoji: "⛩️",
+    // Images — placer dans src/assets/japan/
+    // japan-hero.jpeg, japan-card.jpeg, japan-detail.jpeg
+    imageAlt: "Sanctuaires et cerisiers du Japon Féodal",
   },
 ]
 
