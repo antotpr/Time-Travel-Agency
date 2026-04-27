@@ -1,6 +1,16 @@
-// Les images sont chargées dynamiquement par src/utils/images.js (import.meta.glob).
-// Pas d'import statique ici pour éviter les erreurs de build si les fichiers sont absents.
-// → Placer les images dans : src/assets/{id}/{id}-card.jpeg  etc.
+// Images are loaded at runtime by src/utils/images.js via import.meta.glob.
+// No static imports here — avoids build errors when image files are absent.
+//
+// Per destination, the system resolves:
+//   cardImage    → filename containing "card"  OR sorted index 0
+//   detailImage  → filename containing "detail" OR sorted index 1
+//   heroImage    → filename containing "hero"   OR sorted index 2
+//   galleryImages → all images in the folder
+//
+// Recommended filenames: src/assets/{id}/{id}-card.png (or .jpg/.jpeg/.webp)
+// Any filename works — just place files in src/assets/{id}/
+//
+// Use getDestinationImages(id) from utils/images.js to get all four at once.
 
 export const destinations = [
   {
