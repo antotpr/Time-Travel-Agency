@@ -20,7 +20,7 @@ export default function Header() {
 
   // Close menu on resize to desktop
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 1024) setMenuOpen(false) }
+    const onResize = () => { if (window.innerWidth >= 1280) setMenuOpen(false) }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
@@ -44,7 +44,7 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-16 xl:h-20 gap-4">
 
             {/* Logo — flex-shrink-0 évite l'écrasement sur mobile */}
             <button
@@ -53,13 +53,13 @@ export default function Header() {
               aria-label="Accueil TimeTravel Agency"
             >
               <span className="text-lg sm:text-xl" aria-hidden="true">⏳</span>
-              <span className="font-display text-xs sm:text-sm lg:text-base font-semibold tracking-[0.15em] sm:tracking-widest gold-text uppercase whitespace-nowrap">
+              <span className="font-display text-xs sm:text-sm xl:text-base font-semibold tracking-[0.15em] sm:tracking-widest gold-text uppercase whitespace-nowrap">
                 TimeTravel Agency
               </span>
             </button>
 
             {/* Desktop Nav — visible seulement à partir de lg (1024px) */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Navigation principale">
+            <nav className="hidden xl:flex items-center justify-center gap-8 whitespace-nowrap flex-1" aria-label="Navigation principale">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -77,7 +77,7 @@ export default function Header() {
               {/* CTA — visible seulement à partir de lg */}
               <button
                 onClick={() => handleNav('#reservation')}
-                className="hidden lg:block btn-gold px-5 py-2 rounded-full text-xs tracking-widest uppercase whitespace-nowrap"
+                className="hidden xl:block btn-gold px-5 py-2 rounded-full text-xs tracking-widest uppercase whitespace-nowrap flex-shrink-0"
               >
                 <span>Planifier mon voyage</span>
               </button>
@@ -85,7 +85,7 @@ export default function Header() {
               {/* Hamburger — visible en dessous de lg */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="lg:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg border border-[#1e2a3a]/60 hover:border-[#c9a84c]/40 transition-colors duration-200"
+                className="xl:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg border border-[#1e2a3a]/60 hover:border-[#c9a84c]/40 transition-colors duration-200"
                 aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
                 aria-expanded={menuOpen}
               >
@@ -121,7 +121,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="fixed inset-0 z-40 bg-black/20 lg:hidden"
+              className="fixed inset-0 z-40 bg-black/20 xl:hidden"
               onClick={() => setMenuOpen(false)}
               aria-hidden="true"
             />
@@ -132,7 +132,7 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed inset-x-0 top-16 z-40 lg:hidden"
+              className="fixed inset-x-0 top-16 z-40 xl:hidden"
               style={{
                 background: 'rgba(8,11,20,0.98)',
                 borderBottom: '1px solid rgba(30,42,58,0.6)',
